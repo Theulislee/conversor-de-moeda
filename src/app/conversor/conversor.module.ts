@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ConversorComponent } from './components';
+import { ConversorComponent } from './components'; //add import na pasta components
+import { MoedaService } from './services'; //add import na pasta service
 
 
 
@@ -12,6 +13,9 @@ import { ConversorComponent } from './components';
   //Add o exports Conversor para poder conseguir acessar as informações
   exports: [
     ConversorComponent
+  ],
+  providers: [
+    MoedaService
   ],
   imports: [
     CommonModule

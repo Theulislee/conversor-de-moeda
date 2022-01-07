@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConversorComponent } from './conversor.component';
+import { MoedaService } from '../services'; //add import na pasta service
+
 
 describe('ConversorComponent', () => {
   let component: ConversorComponent;
@@ -8,7 +10,13 @@ describe('ConversorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConversorComponent ]
+      declarations: [
+        ConversorComponent
+      ],
+      //add o providers da moedaService (local: services)
+      providers: [
+        MoedaService
+      ]
     })
     .compileComponents();
   });
