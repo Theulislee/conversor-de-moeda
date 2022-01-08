@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ConversorComponent } from './components'; //add import na pasta components
-import { MoedaService } from './services'; //add import na pasta service
+import { MoedaService, ConversorService } from './services'; //add import na pasta service arquivos de Moeda e conversor Service
 
 
 
@@ -15,7 +15,8 @@ import { MoedaService } from './services'; //add import na pasta service
     ConversorComponent
   ],
   providers: [
-    MoedaService
+    MoedaService,
+    ConversorService
   ],
   imports: [
     CommonModule
