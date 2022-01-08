@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConversorComponent } from './conversor.component';
-import { MoedaService } from '../services'; //add import na pasta service
+import { MoedaService, ConversorService } from '../services'; //add import na pasta service
 
 
 describe('ConversorComponent', () => {
@@ -15,7 +15,8 @@ describe('ConversorComponent', () => {
       ],
       //add o providers da moedaService (local: services)
       providers: [
-        MoedaService
+        MoedaService,
+        ConversorService
       ]
     })
     .compileComponents();
