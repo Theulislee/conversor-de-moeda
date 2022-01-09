@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//import { HttpModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; // importanto Para HttpClienteModule
 
 import { ConversorComponent } from './components'; //add import na pasta components
 import { MoedaService, ConversorService } from './services'; //add import na pasta service arquivos de Moeda e conversor Service
@@ -21,7 +21,7 @@ import { MoedaService, ConversorService } from './services'; //add import na pas
   ],
   imports: [
     CommonModule,
-
+    HttpClientModule
   ]
 })
 export class ConversorModule { }
