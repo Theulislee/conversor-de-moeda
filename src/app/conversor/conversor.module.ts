@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http'; // importanto Para HttpClienteModule
+import { HttpClientModule } from '@angular/common/http'; // importando Para HttpClienteModule
+import { FormsModule } from '@angular/forms'; //Add import para ficar disponinivel forms na aplicação
 
 import { ConversorComponent } from './components'; //add import na pasta components
 import { MoedaService, ConversorService } from './services'; //add import na pasta service arquivos de Moeda e conversor Service
@@ -21,7 +22,8 @@ import { MoedaService, ConversorService } from './services'; //add import na pas
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class ConversorModule { }

@@ -11,11 +11,12 @@ import { MoedaService, ConversorService } from '../services'; //Add import no co
 })
 export class ConversorComponent implements OnInit {
 
-  private moedas: Moeda[]; //lista de moeda para o bloco Html
-  private conversao: Conversao; //Onde colocaremos o valor de moeda para
-  private possuiErro: boolean; //Para exibir mensagem de erro
-  private conversaoResponse: ConversaoResponse; //será retorno da nossa consulta com valores da conversão
+  moedas: Moeda[]; //lista de moeda para o bloco Html
+  conversao: Conversao; //Onde colocaremos o valor de moeda para
+  possuiErro: boolean; //Para exibir mensagem de erro
+  conversaoResponse: ConversaoResponse; //será retorno da nossa consulta com valores da conversão
 
+  //Anotação @ViewChild vai fazer a ligação entre html para o atributo de class.
   @ViewChild("conversaoForm", { static: true }) conversaoForm: NgForm;
 
   constructor(
@@ -24,6 +25,29 @@ export class ConversorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //irá pegar e processar aquela array com todas as moedas
+    this.moedas = this.moedaService.listarTodas();
+    this.init();
   }
 
+  /**
+   * Efetua a chamada para a conversão dos valores.
+   *
+   * @return void
+   */
+  init(): void {
+    this.conversao = new Conversao('USD', 'BRL', null);
+    this.possuiErro = false;
+  }
+
+  /**
+   * Efetua a chamada para a conversão dos valores.
+   *
+   * @return void
+   */
+  converter(): void{
+    if (this.conversaoForm.form.valid) {
+      alert('Convertendo: ' + JSON.stringify(this.conversao));
+    }
+  }
 }
