@@ -5,12 +5,13 @@ import { FormsModule } from '@angular/forms'; //Add import para ficar disponiniv
 
 import { ConversorComponent } from './components'; //add import na pasta components
 import { MoedaService, ConversorService } from './services'; //add import na pasta service arquivos de Moeda e conversor Service
-
+import { NumeroDirective } from './directives'; //Foi add automatico diretiva
 
 
 @NgModule({
   declarations: [
-    ConversorComponent
+    ConversorComponent,
+    NumeroDirective
   ],
   //Add o exports Conversor para poder conseguir acessar as informações
   exports: [
