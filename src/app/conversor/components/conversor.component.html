@@ -1,7 +1,7 @@
 <br />
 <div class="alert alert-danger"
 	role="alert"
-	*ngIf="possuiErro">
+	[ngIf]="possuiErro">
 	Erro obtendo dados. Tente novamente.
 </div>
 <div class="panel panel-success">
@@ -50,13 +50,14 @@
 			data-target="#modalCotacao"
 			(click)="converter()"
 			[disabled]="!conversaoForm.form.valid">
+      {{ conversaoResponse | json }}
 	  </form>
 	 </div>
-	 <!-- <modal-cotacao
+	 <!--   <modal-cotacao
         [id]="'modalCotacao'"
         [conversaoResponse]="conversaoResponse"
 		[conversao]="conversao"
         (onConfirm)="init()">
-    </modal-cotacao> -->
+    </modal-cotacao>  -->
 </div>
 

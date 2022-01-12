@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 //import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Conversao, ConversaoResponse } from '../models';
+import { Conversao,
+  ConversaoResponse
+} from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +40,8 @@ export class ConversorService {
   * @param Conversao conversao
   * @return number
   */
-      cotacaoPara(conversaoResponse: ConversaoResponse, conversao: Conversao): number {
+      cotacaoPara(conversaoResponse: ConversaoResponse,
+        conversao: Conversao): number {
 
       if (conversaoResponse === undefined) {
       return 0;
@@ -52,13 +55,15 @@ export class ConversorService {
   * @param Conversao conversao
   * @return string
   */
-      cotacaoDe(conversaoResponse: ConversaoResponse, conversao: Conversao): string {
+      cotacaoDe(conversaoResponse: ConversaoResponse,
+        conversao: Conversao): string {
 
       if (conversaoResponse === undefined) {
 
       return '0';
       }
-      return (1 / conversaoResponse.rates[conversao.moedaPara]).toFixed(4);
+      return (1 / conversaoResponse.rates[conversao.moedaPara]).
+      toFixed(4);
     }
   /**
   * Retorna a data da cotação dado uma response.
