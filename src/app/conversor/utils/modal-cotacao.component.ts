@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+
+import { ConversaoResponse, Conversao } from '../models'; //Add import models
+import { ConversorService } from '../services'; //Add import services
 
 @Component({
   selector: 'modal-cotacao',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalCotacaoComponent implements OnInit {
 
-  constructor() { }
+  /* Essa anotação @Input permite receber parametros que vem externamente
+  passado por outro componente */
+
+  @Input() id: string;
+  @Input() conversaoResponse: ConversaoResponse;
+  @Input() conversao: Conversao = new Conversao();
+  //@Input() onConfirm: EventEmitter<any> = new EventEmitter</any>
+
+  constructor(private conversorService: ConversorService) { }
 
   ngOnInit(): void {
   }
