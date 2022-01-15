@@ -20,7 +20,19 @@ export class ModalCotacaoComponent implements OnInit {
 
   constructor(private conversorService: ConversorService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
+
+  get valorConvertido(): string {
+    if (this.conversaoResponse === undefined) {
+      return '0';
+    }
+
+    return (this.conversao.valor *
+      this.conversaoResponse.rates[this.conversao.moedaPara])
+       .toFixed(2);
+
+  }
 }
+
+
