@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ConversaoResponse, Conversao } from '../models'; //Add import models
 import { ConversorService } from '../services'; //Add import services
@@ -16,12 +16,15 @@ export class ModalCotacaoComponent implements OnInit {
   @Input() id: string;
   @Input() conversaoResponse: ConversaoResponse;
   @Input() conversao: Conversao = new Conversao();
-  //@Input() onConfirm: EventEmitter<any> = new EventEmitter</any>
+  @Output() onConfirm: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private conversorService: ConversorService) { }
 
   ngOnInit(): void {}
 
+  novaConsulta() {
+    this.onConfirm.emit();
+  }
 
   get valorConvertido(): string {
     if (this.conversaoResponse === undefined) {
