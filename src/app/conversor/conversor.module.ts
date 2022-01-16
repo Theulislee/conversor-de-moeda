@@ -5,15 +5,16 @@ import { FormsModule } from '@angular/forms'; //Add import para ficar disponiniv
 
 import { ConversorComponent } from './components'; //add import na pasta components
 import { MoedaService, ConversorService } from './services'; //add import na pasta service arquivos de Moeda e conversor Service
-import { NumeroDirective } from './directives';
-import { ModalCotacaoComponent } from './utils'; //Foi add automatico diretiva
-
+import { NumeroDirective } from './directives'; //Foi add automatico diretiva
+import { ModalCotacaoComponent } from './utils'; //Foi add automatico utils
+import { DataBrPipe } from './pipes'; //Foi add automatico pipe
 
 @NgModule({
   declarations: [
     ConversorComponent,
     NumeroDirective,
-    ModalCotacaoComponent
+    ModalCotacaoComponent,
+    DataBrPipe
   ],
   //Add o exports Conversor para poder conseguir acessar as informações
   exports: [
