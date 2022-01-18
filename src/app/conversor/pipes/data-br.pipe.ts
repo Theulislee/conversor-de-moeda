@@ -22,7 +22,7 @@ export class DataBrPipe implements PipeTransform {
       return dataEn;
     }
 
-    return `${dataArr[2]} / ${dataArr[1]} / ${dataArr[0]}`;
+    return dataArr[2] + '/' + dataArr[1] + '/' + dataArr[0];
   }
 
 }
